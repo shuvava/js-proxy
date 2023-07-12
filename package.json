@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "start": "node index.js"
+  },
+  "name": "js-proxy",
+  "version": "1.0.0",
+  "description": "simple logging proxy",
+  "main": "index.js",
+  "repository": "git@github.com:shuvava/js-proxy.git",
+  "author": "shuvava <shuvava@users.noreply.github.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.18.2",
+    "http-proxy-middleware": "^2.0.6",
+    "morgan": "^1.10.0"
+  }
+}
