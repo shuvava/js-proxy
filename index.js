@@ -11,7 +11,7 @@ const API_SERVICE_URL = process.env.API_SERVICE_URL || "https://reqres.in"
 const app = express();
 
 // Logging
-morgan.token('req-body', function getRequestBody(req, res) {
+morgan.token('req-body', function getRequestBody(req) {
     return JSON.stringify(req.body)
 })
 morgan.token('res-body', function getResponseBody(req, res) {
@@ -37,9 +37,8 @@ function logResponseBody(req, res, next) {
         if (chunk)
             chunks.push(new Buffer(chunk));
 
-        var body = Buffer.concat(chunks).toString('utf8');
         //console.log(req.path, body);
-        res.body = body
+        res.body = Buffer.concat(chunks).toString('utf8')
 
         oldEnd.apply(res, arguments);
     };
